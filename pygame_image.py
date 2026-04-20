@@ -10,12 +10,15 @@ def main():
     screen = pg.display.set_mode((800, 600))
     clock  = pg.time.Clock()
     bg_img = pg.image.load("fig/pg_bg.jpg") #練習１
+    kk_img = pg.image.load("fig/pg.jpg") #練習３
+    kk_img = pg.transform.flip(kk_img,True,False)
     tmr = 0
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
         screen.blit(bg_img, [0, 0]) #練習２
+        screen.blit(kk_img,[300,200])#練習４
         pg.display.update()
         tmr += 1        
         clock.tick(10)

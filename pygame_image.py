@@ -21,12 +21,13 @@ def main():
             if event.type == pg.QUIT: return
         key_lst = pg.key.get_pressed()  # 練習10：すべてのキーの押下状態の取得
         # print(key_lst)
+        if not any(key_lst):
+            kk_rct.move_ip(-1,0)
         if key_lst[pg.K_UP]:  # 上矢印キーが押されていたら
-            kk_rct.move_ip(0, -1)
+            kk_rct.move_ip(-1, -1)
         if key_lst[pg.K_DOWN]:  # 下矢印キーが押されていたら
-            kk_rct.move_ip(0, +1)
-        if key_lst[pg.K_LEFT]:  # 左矢印キーが押されていたら
-            kk_rct.move_ip(-1, 0)
+            
+            kk_rct.move_ip(-1, +1)
         if key_lst[pg.K_RIGHT]:  # 右矢印キーが押されていたら
             kk_rct.move_ip(+1, 0)
     
